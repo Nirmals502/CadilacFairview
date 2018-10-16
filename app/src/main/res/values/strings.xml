@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CF</string>
+    <string name="login">Login</string>
+    <string name="signup">signup</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="need_an_account">Need an account?</string>
+    <string name="signup_">SIGN UP</string>
+    <string name="first_name">FIRST NAME</string>
+    <string name="last_name">LAST NAME</string>
+    <string name="already_have_an_account">Already have an account?</string>
+</resources>
