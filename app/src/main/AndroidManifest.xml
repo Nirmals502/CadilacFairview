@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mobile.cadilacfairview">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -32,10 +35,39 @@
         <activity
             android:name=".Welcome_screen"
             android:screenOrientation="portrait" />
-        <activity android:name=".Home_screen" />
-        <activity android:name=".Scanning_screen" />
-        <activity android:name=".Find_offer_screen" />
-        <activity android:name=".Offer_response_screen"></activity>
+        <activity
+            android:name=".Home_screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Scanning_screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Find_offer_screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Offer_response_screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Check_your_mail"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Otp_screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Email_send_screen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity
+            android:name=".Termsnd_condition"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Hold_action_screen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Hold_Book_confirmation"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Get_coupon_action"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

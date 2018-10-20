@@ -1,0 +1,238 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/RLV_header"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:background="#033C5A"
+        tools:ignore="RtlCompat">
+
+        <ImageView
+            android:id="@+id/_header_tittle"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            app:srcCompat="@drawable/header_text" />
+
+        <ImageView
+            android:id="@+id/img_setting"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="21dp"
+            app:srcCompat="@drawable/setting_icon"
+            tools:ignore="RtlCompat" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/Sc_vw"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/RLV_header"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp">
+
+        <RelativeLayout
+            android:id="@+id/rlv_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/welcome_screen_bg">
+
+            <RelativeLayout
+                android:id="@+id/Rlv_back"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+
+
+                android:layout_below="@+id/Rlv_Content_holder"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="90dp"
+                android:background="#DB0032">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Back"
+                    android:textColor="@android:color/white"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlv_shoes_container"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+
+                android:layout_alignParentTop="true">
+
+                <ImageView
+                    android:id="@+id/imageView_main_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/shoes_place_holder" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Rlv_Content_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlv_shoes_container"
+
+                android:background="@android:color/white">
+
+                <TextView
+                    android:id="@+id/textView_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="17dp"
+                    android:text="Roots"
+                    android:textColor="@color/Blue_dark"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_header"
+
+
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginRight="5dp"
+                    android:text="Womens Rideau Mid Sneaker"
+                    android:textColor="@color/Blue_dark"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/textView_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_product_name"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:text="Inventory Summary"
+                    android:textColor="@color/Blue_dark" />
+
+                <RelativeLayout
+                    android:id="@+id/Holder"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/textView_description"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="50dp">
+
+                    <TextView
+                        android:id="@+id/textView_Summary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginLeft="1dp"
+                        android:layout_marginTop="2dp"
+                        android:text="Hold Summary"
+                        android:textColor="@color/Blue_dark"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spinner_Color"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/textView_Summary"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/spinner_border" />
+
+                    <Spinner
+                        android:id="@+id/spinner_Size"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/spinner_Color"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/spinner_border" />
+
+                    <Spinner
+                        android:id="@+id/spinner_quantity"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/spinner_Size"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/spinner_border" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlv___"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+
+                    android:layout_alignParentRight="true"
+
+                    android:layout_marginTop="240dp"
+                    android:layout_marginEnd="13dp"
+
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="46dp"
+                    android:background="@drawable/round">
+
+                    <ImageView
+                        android:id="@+id/imageView_cart"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+
+                        android:layout_alignParentTop="true"
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="26dp"
+                        app:srcCompat="@drawable/carticon" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_below="@+id/imageView_cart"
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:text="  HOLD"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

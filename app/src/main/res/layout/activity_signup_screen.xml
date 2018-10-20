@@ -62,7 +62,7 @@
                 app:srcCompat="@drawable/bg_login" />
 
             <EditText
-                android:id="@+id/editText_First_name"
+                android:id="@+id/editText_Email"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
 
@@ -85,7 +85,7 @@
                 android:id="@+id/editText_last_name"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_below="@+id/editText_First_name"
+                android:layout_below="@+id/editText_Email"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"

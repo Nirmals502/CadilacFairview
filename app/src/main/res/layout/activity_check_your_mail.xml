@@ -23,15 +23,6 @@
             android:layout_centerInParent="true"
             app:srcCompat="@drawable/header_text" />
 
-        <ImageView
-            android:id="@+id/img_setting"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="21dp"
-            app:srcCompat="@drawable/setting_icon"
-            tools:ignore="RtlCompat" />
     </RelativeLayout>
 
     <ProgressBar
@@ -53,7 +44,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/imageView_mic"
+        android:id="@+id/imageView_mail_icon"
         android:layout_width="60dp"
         android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="@+id/progressBar2"
@@ -61,7 +52,7 @@
         app:layout_constraintStart_toStartOf="@+id/progressBar2"
         app:layout_constraintTop_toTopOf="@+id/progressBar2"
         app:layout_constraintVertical_bias="0.488"
-        app:srcCompat="@drawable/mic" />
+        app:srcCompat="@drawable/mail_icon" />
 
     <TextView
         android:id="@+id/textView_cfRQR"
@@ -73,7 +64,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="CF Requires"
+        android:text="Check "
         android:textColor="@android:color/white"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -94,7 +85,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="your microphone"
+        android:text="your inbox"
         android:textColor="@android:color/white"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -114,9 +105,10 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="In order for CF to find deals for you\naround the mall,this app requires access\n  to scan for ultra-sonic sound waves."
+        android:text="Click the link and you will\nautomatically be signed in."
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/container3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,22 +119,22 @@
     <RelativeLayout
         android:id="@+id/container3"
         android:layout_width="0dp"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="85dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.941">
+        app:layout_constraintVertical_bias="0.804">
 
         <Button
-            android:id="@+id/button_allow"
+            android:id="@+id/button_resend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -150,28 +142,27 @@
             android:layout_marginLeft="28dp"
             android:layout_marginRight="28dp"
             android:background="@drawable/button_round_login"
-            android:text="ALLOW"
+            android:text="RESEND"
             android:textColor="@android:color/white" />
     </RelativeLayout>
 
     <TextView
         android:id="@+id/textView_back"
-        android:layout_width="54dp"
-        android:layout_height="25dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Back"
+        android:text="i have not received the link"
         android:textColor="@android:color/white"
-        android:textSize="18dp"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/container3"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintVertical_bias="0.577" />
 
 </android.support.constraint.ConstraintLayout>
