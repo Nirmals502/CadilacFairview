@@ -2,6 +2,7 @@ package Animations;
 
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.Animation;
+import android.view.animation.CycleInterpolator;
 import android.view.animation.RotateAnimation;
 import android.view.animation.TranslateAnimation;
 
@@ -64,5 +65,12 @@ public class animations {
         rotate.setRepeatCount(Animation.INFINITE);
         return rotate;
     }
+    public Animation Shake_Animation() {
+        Animation shake = new TranslateAnimation(0, 5, 0, 0);
+        shake.setInterpolator(new CycleInterpolator(5));
+        shake.setDuration(300);
 
+
+        return shake;
+    }
 }

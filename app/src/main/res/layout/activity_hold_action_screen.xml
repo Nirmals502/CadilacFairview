@@ -12,7 +12,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:background="#033C5A"
+        android:background="@android:color/white"
         tools:ignore="RtlCompat">
 
         <ImageView
@@ -42,13 +42,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp">
+        android:layout_marginLeft="0dp"
+        android:background="@drawable/newbg">
 
         <RelativeLayout
             android:id="@+id/rlv_holder"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/welcome_screen_bg">
+            android:layout_height="wrap_content">
 
             <RelativeLayout
                 android:id="@+id/Rlv_back"
@@ -58,7 +58,6 @@
 
                 android:layout_below="@+id/Rlv_Content_holder"
                 android:layout_alignParentStart="true"
-                android:layout_marginBottom="90dp"
                 android:background="#DB0032">
 
                 <TextView
@@ -68,7 +67,7 @@
 
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
-                    android:text="Back"
+                    android:text="BACK"
                     android:textColor="@android:color/white"
                     android:textSize="17dp"
                     android:textStyle="bold" />
@@ -100,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rlv_shoes_container"
 
-                android:background="@android:color/white">
+                android:background="@android:color/transparent">
 
                 <TextView
                     android:id="@+id/textView_header"
@@ -183,16 +182,17 @@
                         android:layout_marginTop="20dp"
                         android:background="@drawable/spinner_border" />
 
-                    <Spinner
+                    <EditText
                         android:id="@+id/spinner_quantity"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_below="@+id/spinner_Size"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/spinner_border" />
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/square_border"
+                        android:hint="Quantity" />
                 </RelativeLayout>
 
-                <RelativeLayout
+                <ImageView
                     android:id="@+id/rlv___"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
@@ -202,35 +202,10 @@
                     android:layout_marginTop="240dp"
                     android:layout_marginEnd="13dp"
 
-                    android:layout_marginRight="17dp"
-                    android:layout_marginBottom="46dp"
-                    android:background="@drawable/round">
+                    android:layout_marginRight="13dp"
+                    android:layout_marginBottom="46dp">
 
-                    <ImageView
-                        android:id="@+id/imageView_cart"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-
-                        android:layout_alignParentTop="true"
-
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="26dp"
-                        app:srcCompat="@drawable/carticon" />
-
-                    <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_below="@+id/imageView_cart"
-
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="  HOLD"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold" />
-                </RelativeLayout>
+                </ImageView>
             </RelativeLayout>
 
         </RelativeLayout>

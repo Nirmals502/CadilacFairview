@@ -30,7 +30,7 @@ public class Check_your_mail extends AppCompatActivity {
             public void onClick(View view) {
                 Intent int_login = new Intent(Check_your_mail.this, Termsnd_condition.class);
                 startActivity(int_login);
-                finish();
+               // finish();
             }
         });
     }

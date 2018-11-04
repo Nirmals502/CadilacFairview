@@ -21,17 +21,8 @@
             android:layout_width="120dp"
             android:layout_height="80dp"
             android:layout_centerInParent="true"
-            app:srcCompat="@drawable/header_text" />
+            app:srcCompat="@drawable/old_logo" />
 
-        <ImageView
-            android:id="@+id/img_setting"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="21dp"
-            app:srcCompat="@drawable/setting_icon"
-            tools:ignore="RtlCompat" />
     </RelativeLayout>
 
     <ProgressBar
@@ -73,7 +64,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="CF Requires"
+        android:text="CF NOW requires"
         android:textColor="@android:color/white"
         android:textSize="25dp"
         android:textStyle="bold"
@@ -114,7 +105,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="In order for CF to find deals for you\naround the mall,this app requires access\n  to scan for ultra-sonic sound waves."
+        android:text="In order for CF to find deals for you\naround the Mall,this app requires access\n  to scan for ultra-sonic sound waves."
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +155,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Back"
+        android:text="BACK"
         android:textColor="@android:color/white"
         android:textSize="18dp"
         app:layout_constraintBottom_toBottomOf="parent"

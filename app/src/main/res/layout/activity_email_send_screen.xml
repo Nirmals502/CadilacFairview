@@ -24,15 +24,6 @@
             android:layout_centerInParent="true"
             app:srcCompat="@drawable/header_text" />
 
-        <ImageView
-            android:id="@+id/img_setting"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:layout_marginEnd="21dp"
-            app:srcCompat="@drawable/setting_icon"
-            tools:ignore="RtlCompat" />
     </RelativeLayout>
 
     <ScrollView

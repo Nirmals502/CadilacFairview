@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/welcome_screen_bg"
     tools:context=".Info_screen">
 
 
@@ -15,7 +14,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:background="#033C5A"
+        android:background="@android:color/white"
         tools:ignore="RtlCompat">
 
         <ImageView
@@ -43,7 +42,9 @@
 
 
         android:layout_height="match_parent"
-        android:layout_marginTop="90dp">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="90dp"
+        android:background="@android:color/white">
 
         <RelativeLayout
             android:id="@+id/rlv_Container"
@@ -51,53 +52,72 @@
             android:layout_height="500dp">
 
             <RelativeLayout
-                android:id="@+id/rlv_footer"
+                android:id="@+id/rlv_trans_parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/rlv_trans_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="58dp"
-                android:background="@android:color/white">
 
-                <ImageView
-                    android:id="@+id/imageView_offer"
-                    android:layout_width="240dp"
-                    android:layout_height="40dp"
-                    android:layout_alignParentStart="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="30dp"
-                    app:srcCompat="@drawable/my_active_offr"
-                    tools:ignore="RtlCompat" />
 
-                <ImageView
-                    android:id="@+id/imageView_Plus"
-                    android:layout_width="50dp"
-                    android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/newbg">
+
+                <RelativeLayout
+                    android:id="@+id/rlv_footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_below="@+id/rlv_ellipse_holder"
+
                     android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginEnd="21dp"
-                    app:srcCompat="@drawable/plus"
-                    tools:ignore="RtlCompat" />
-            </RelativeLayout>
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:background="@android:color/white">
 
-            <RelativeLayout
-                android:id="@+id/rlv_trans_parent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                >
+                    <ImageView
+                        android:id="@+id/imageView_Plus"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignTop="@+id/imageView_offer"
+
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="38dp"
+                        app:srcCompat="@drawable/plus"
+                        tools:ignore="RtlCompat" />
+
+                    <ListView
+                        android:id="@+id/List_my_offer"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_below="@+id/imageView_offer"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/imageView_offer"
+                        android:layout_width="240dp"
+                        android:layout_height="24dp"
+
+
+                        android:layout_marginLeft="-15dp"
+
+                        android:layout_marginTop="20dp"
+                        app:srcCompat="@drawable/my_active_offr"
+                        tools:ignore="RtlCompat" />
+                </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/rlv_ellipse_holder"
                     android:layout_width="250dp"
                     android:layout_height="250dp"
 
-                    android:layout_alignStart="@+id/rlv_trans_parent"
-                    android:layout_marginTop="80dp"
-                    android:background="@drawable/big_circle">
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="60dp">
 
                     <RelativeLayout
                         android:id="@+id/rlv_small_circle"
@@ -106,17 +126,47 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentTop="true"
                         android:layout_margin="15dp"
-                        android:background="@drawable/small_circle"
                         tools:ignore="RtlCompat">
 
-                        <ImageView
+                        <RelativeLayout
                             android:id="@+id/imageView_offr"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:layout_margin="15dp"
+                            android:layout_width="190dp"
+                            android:layout_height="190dp"
 
-                            app:srcCompat="@drawable/img_find_offr" />
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:background="@drawable/circle_xml">
+
+                            <ImageView
+                                android:id="@+id/imageView2"
+                                android:layout_width="80dp"
+                                android:layout_height="80dp"
+
+
+                                android:layout_centerInParent="true"
+                                android:layout_centerHorizontal="true"
+
+                                app:srcCompat="@drawable/new_cart_" />
+
+                            <TextView
+                                android:id="@+id/textView22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/imageView2"
+
+                                android:layout_centerHorizontal="true"
+                                android:text="TAB TO FIND\n     OFFERS"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+
                     </RelativeLayout>
                 </RelativeLayout>
 

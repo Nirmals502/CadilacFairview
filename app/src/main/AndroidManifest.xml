@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/cf_new_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -61,13 +61,16 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".Hold_action_screen"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden" />
         <activity
             android:name=".Hold_Book_confirmation"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Get_coupon_action"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
+        <activity android:name=".Take_me_direction" />
+        <activity android:name=".Setting_screen"></activity>
     </application>
 
 </manifest>

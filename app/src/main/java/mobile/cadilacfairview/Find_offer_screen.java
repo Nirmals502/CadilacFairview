@@ -2,6 +2,7 @@ package mobile.cadilacfairview;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import com.soundpays.sdk.SoundpaysConstants;
 import com.soundpays.sdk.callbacks.SoundpaysAudioCallback;
 
 import Animations.animations;
+import DATAMODEL.Shared_preference_model;
 
 public class Find_offer_screen extends AppCompatActivity {
     Button Btn_allow;
@@ -37,20 +39,8 @@ public class Find_offer_screen extends AppCompatActivity {
         Btn_allow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent int_login = new Intent(Find_offer_screen.this, Scanning_screen.class);
-                startActivity(int_login);
-                finish();
-//                String check_text = Btn_allow.getText().toString();
-//                if (check_text.contentEquals("ALLOW")) {
-//                    requestPermissionIfNeeded();
-//                    Btn_allow.setText("STOP SCANNING");
-//                } else if (check_text.contentEquals("STOP SCANNING")) {
-//                    //requestPermissionIfNeeded();
-//                    stopAudioScan();
-//                    Btn_allow.setText("ALLOW");
-//                }
 
-
+                requestPermissionIfNeeded();
             }
         });
 
@@ -66,9 +56,6 @@ public class Find_offer_screen extends AppCompatActivity {
                         new String[]{Manifest.permission.RECORD_AUDIO},
                         SoundpaysConstants.RECORD_AUDIO_REQUEST);
 
-            } else {
-
-                beginAudioScan();
             }
         }
     }
@@ -83,10 +70,25 @@ public class Find_offer_screen extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     //Toast.makeText(Find_offer_screen.this,"Permission Granted",Toast.LENGTH_LONG).show();
-                    beginAudioScan();
+                    SharedPreferences.Editor editor = getSharedPreferences(Shared_preference_model.MyPREFERENCES, MODE_PRIVATE).edit();
+                    editor.putString("Permission", "Permission Granted");
+
+                    editor.apply();
+
+                    Intent int_login = new Intent(Find_offer_screen.this, Scanning_screen.class);
+                    startActivity(int_login);
+                    finish();
+                    //beginAudioScan();
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
                 } else {
+                    SharedPreferences.Editor editor = getSharedPreferences(Shared_preference_model.MyPREFERENCES, MODE_PRIVATE).edit();
+                    editor.putString("Permission", "Permission Denied");
+
+                    editor.apply();
+                    Intent int_login = new Intent(Find_offer_screen.this, Home_screen.class);
+                    startActivity(int_login);
+                    finish();
                     // Toast.makeText(Find_offer_screen.this,"Permission Denied",Toast.LENGTH_LONG).show();
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
@@ -100,53 +102,5 @@ public class Find_offer_screen extends AppCompatActivity {
         }
     }
 
-    private void stopAudioScan() {
-        //scanButton.setText("Scan");
-        soundpays.stopAudioScan();
-        scanning = false;
-    }
 
-    private void beginAudioScan() {
-
-        //Please declare what you wish to do below once a code has been retrieved
-        soundpays.beginAudioScan(new SoundpaysAudioCallback() {
-            @Override
-            public void onSuccess() {
-                //This is the main callback when a code is detected use getCode to retrieve the code.
-                receivedCode(getCode());
-
-            }
-
-            @Override
-            public void onFailure(Exception e) {
-
-            }
-        }, 10);
-    }
-
-    private void receivedCode(final String code) {
-        /* The code will either return as
-        0 for timeout or non valid code if a valid list of codes was specified when calling soundpays.beginAudioScan()
-       -1 if sdk requires app mic permissions
-        8 digit code if code was detected and considered valid.
-        */
-        Find_offer_screen.this.runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                stopAudioScan();
-                if (code == "-1") {
-                    Toast.makeText(Find_offer_screen.this, "Mic Permission Needed", Toast.LENGTH_LONG).show();
-                    requestPermissionIfNeeded();
-                } else if (code == "0") {
-                    Toast.makeText(Find_offer_screen.this, "Scanning timed out or valid code not found", Toast.LENGTH_LONG).show();
-                    //codeTextView.setText("Scanning timed out or valid code not found");
-                } else {
-                    Toast.makeText(Find_offer_screen.this, code, Toast.LENGTH_LONG).show();
-                    Intent int_login = new Intent(Find_offer_screen.this, Scanning_screen.class);
-                    startActivity(int_login);
-                    finish();
-                }
-            }
-        });
-    }
 }

@@ -1,6 +1,7 @@
 package mobile.cadilacfairview;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,12 +10,14 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import Animations.animations;
+import DATAMODEL.Shared_preference_model;
 
 public class Splash_screen extends AppCompatActivity {
     ImageView img_now, img_cf;
     ImageView img_topleft;
     ImageView img_Bottomright;
     animations anim = new animations();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class Splash_screen extends AppCompatActivity {
         Animation a1 = AnimationUtils.loadAnimation(Splash_screen.this, R.anim.top_left);
         Animation a1_bottom = AnimationUtils.loadAnimation(Splash_screen.this, R.anim.bottom_right);
         img_topleft.setAnimation(a1);
+
         //img_Bottomright.setAnimation(a1_bottom);
         goToNextScreen();
     }
@@ -40,9 +44,20 @@ public class Splash_screen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent int_login = new Intent(Splash_screen.this, Email_send_screen.class);
-                startActivity(int_login);
-                finish();
+
+                SharedPreferences prefs = getSharedPreferences(Shared_preference_model.MyPREFERENCES, MODE_PRIVATE);
+                String Email = prefs.getString(Shared_preference_model.Email, null);
+                if (Email != null) {
+                    Intent int_login = new Intent(Splash_screen.this, Login_screen_.class);
+                    startActivity(int_login);
+                    finish();
+                } else {
+                    Intent int_login = new Intent(Splash_screen.this, Login_screen_.class);
+                    startActivity(int_login);
+                    finish();
+                }
+
+
             }
         }, 5000);
     }

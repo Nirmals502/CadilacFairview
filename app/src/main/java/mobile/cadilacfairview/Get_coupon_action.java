@@ -8,13 +8,22 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Get_coupon_action extends AppCompatActivity {
-RelativeLayout Rlv_back;
+    @BindView(R.id.Rlv_direction)
+    RelativeLayout Rlv_direction;
+    @BindView(R.id.Rlv_back)
+    RelativeLayout Rlv_back;
+    @BindView(R.id.Rlv_my_offer)
+    RelativeLayout Rlv_my_offer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_coupon_action);
-        Rlv_back=(RelativeLayout)findViewById(R.id.Rlv_back);
+        ButterKnife.bind(this);
         Rlv_back.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -34,6 +43,20 @@ RelativeLayout Rlv_back;
 
 
                 return false;
+            }
+        });
+        Rlv_direction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent int_login = new Intent(Get_coupon_action.this, Take_me_direction.class);
+//                startActivity(int_login);
+                finish();
+            }
+        });
+        Rlv_direction.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }

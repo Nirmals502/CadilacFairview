@@ -19,7 +19,7 @@ public class Info_screen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent int_login =new Intent(Info_screen.this,Login_screen_.class);
                 startActivity(int_login);
-                finish();
+               // finish();
             }
         });
         Btn_signup.setOnClickListener(new View.OnClickListener() {
@@ -27,7 +27,7 @@ public class Info_screen extends AppCompatActivity {
             public void onClick(View view) {
                 Intent int_login =new Intent(Info_screen.this,Signup_screen.class);
                 startActivity(int_login);
-                finish();
+               // finish();
             }
         });
     }

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Hold_Book_confirmation">
+
+    <ScrollView
+        android:id="@+id/sv_"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+        <RelativeLayout
+            android:id="@+id/sv_layout_holder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/Rlv_holder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="60dp"
+
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="60dp"
+                android:background="@android:color/white">
+
+                <RelativeLayout
+                    android:id="@+id/Rlv_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+
+
+                    android:layout_below="@id/Rlv_layout_holder"
+
+                    android:layout_marginTop="25dp"
+                    android:background="#DB0032">
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="BACK"
+                        android:textColor="@android:color/white"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageView_pic"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/demo_shoes_image" />
+
+                <TextView
+                    android:id="@+id/textView_reserved"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/imageView_pic"
+                    android:layout_centerInParent="false"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="35dp"
+                    android:text="RESERVED!"
+                    android:textColor="@color/Blue_dark"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView_present_this"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_reserved"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:text="Present this BAR"
+                    android:textColor="@color/Blue_dark"
+                    android:textSize="17dp" />
+
+                <TextView
+                    android:id="@+id/textView_code_to_any"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView_present_this"
+                    android:layout_centerHorizontal="true"
+                    android:text="Code to any staff:"
+                    android:textColor="@color/Blue_dark"
+                    android:textSize="17dp" />
+
+                <ImageView
+                    android:id="@+id/imageView_qr_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+
+                    android:layout_below="@+id/textView_code_to_any"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="50dp"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/qrcode" />
+
+                <RelativeLayout
+                    android:id="@+id/Rlv_layout_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:layout_below="@+id/imageView_qr_code"
+
+                    android:layout_marginTop="20dp">
+
+                    <RelativeLayout
+                        android:id="@+id/Rlv_my_offer"
+                        android:layout_width="99dp"
+                        android:layout_height="90dp"
+
+
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/rlv____"
+                        android:background="@drawable/square_border">
+
+                        <ImageView
+                            android:id="@+id/imageView_offer"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+
+                            android:layout_alignParentTop="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            app:srcCompat="@drawable/get_coupon" />
+
+                        <TextView
+                            android:id="@+id/textView16"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/imageView_offer"
+                            android:layout_centerHorizontal="true"
+                            android:text="MY OFFERS"
+                            android:textColor="@color/Blue_dark" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rlv____"
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true">
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/Rlv_direction"
+                        android:layout_width="99dp"
+                        android:layout_height="90dp"
+
+
+                        android:layout_marginTop="0dp"
+                        android:layout_marginRight="5dp"
+
+                        android:layout_toLeftOf="@+id/rlv____"
+                        android:background="@drawable/square_border">
+
+                        <ImageView
+                            android:id="@+id/imageView_direction"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+
+                            android:layout_centerHorizontal="true"
+                            app:srcCompat="@drawable/direction" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/imageView_direction"
+
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="5dp"
+                            android:text="DIRECTIONS"
+                            android:textColor="@color/Blue_dark" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/Rlv_circle_holder"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/round">
+
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_centerVertical="true"
+                    android:layout_margin="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:src="@drawable/hanger_" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

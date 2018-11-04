@@ -18,6 +18,7 @@ ImageView img_skip;
         setContentView(R.layout.activity_welcome_screen);
         rlv_ = (RelativeLayout)findViewById(R.id.rlv_ellipse_holder);
         img_skip=(ImageView)findViewById(R.id.imageView_skip);
+
         final RippleBackground rippleBackground=(RippleBackground)findViewById(R.id.content);
         rippleBackground.startRippleAnimation();
         img_skip.setOnClickListener(new View.OnClickListener() {
