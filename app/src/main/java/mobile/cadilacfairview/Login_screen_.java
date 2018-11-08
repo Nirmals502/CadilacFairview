@@ -3,6 +3,7 @@ package mobile.cadilacfairview;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,12 +35,15 @@ public class Login_screen_ extends AppCompatActivity {
     @BindView(R.id.editText_password)
     EditText Edt_txt_Paswword;
     animations anim = new animations();
-
+    String android_id="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_scren);
         ButterKnife.bind(this);
+        android_id = Settings.Secure.getString(this.getContentResolver(),
+                Settings.Secure.ANDROID_ID);
+        System.out.println(android_id);
 
         Btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +66,7 @@ public class Login_screen_ extends AppCompatActivity {
                     Login_post Post = new Login_post();
                     Post.setAction("login");
                     Post.setCountry("CA");
-                    Post.setDevice("android");
+                    Post.setDevice(android_id);
                     Post.setEmail(Edt_txt_Email.getText().toString());
                     Post.setProgram("CF");
                     Post.setLanguage("English");

@@ -4,27 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/newbg_login_signup"
     tools:context=".Info_screen">
 
-
-    <RelativeLayout
-        android:id="@+id/RLV_header"
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:background="@android:color/white"
-        tools:ignore="RtlCompat">
-
-        <ImageView
-            android:id="@+id/_header_tittle"
-            android:layout_width="120dp"
-            android:layout_height="80dp"
-            android:layout_centerInParent="true"
-            app:srcCompat="@drawable/header_text" />
-
-    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/sv_"
@@ -34,7 +16,7 @@
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="90dp"
+        android:layout_marginStart="0dp"
         tools:ignore="RtlCompat">
 
         <RelativeLayout
@@ -49,8 +31,7 @@
 
                 android:layout_alignParentStart="true"
 
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/newbg" />
+                android:scaleType="centerCrop" />
 
             <EditText
                 android:id="@+id/editText_Email"
@@ -141,7 +122,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
                 android:text="@string/already_have_an_account"
-                android:textColor="#006098" />
+                android:textColor="#404040" />
 
             <TextView
                 android:id="@+id/textView_login"
@@ -157,6 +138,15 @@
         </RelativeLayout>
 
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/_header_tittle"
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="65dp"
+        app:srcCompat="@drawable/header_text" />
 
 
 </RelativeLayout>

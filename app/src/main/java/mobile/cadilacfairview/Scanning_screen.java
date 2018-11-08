@@ -1,8 +1,10 @@
 package mobile.cadilacfairview;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.soundpays.sdk.Soundpays;
+import com.soundpays.sdk.SoundpaysConstants;
 import com.soundpays.sdk.callbacks.SoundpaysAudioCallback;
 
 import DATAMODEL.ApiUtils;
@@ -56,7 +59,8 @@ public class Scanning_screen extends AppCompatActivity {
         rotate.setDuration(4000);
         rotate.setRepeatCount(Animation.INFINITE);
         pro_bar.setAnimation(rotate);
-        beginAudioScan();
+        requestPermissionIfNeeded();
+
         //goToNextScreen();
 
         Txt_back.setOnClickListener(new View.OnClickListener() {
@@ -101,6 +105,8 @@ public class Scanning_screen extends AppCompatActivity {
     private void beginAudioScan() {
 
         //Please declare what you wish to do below once a code has been retrieved
+
+
         soundpays.beginAudioScan(new SoundpaysAudioCallback() {
             @Override
             public void onSuccess() {
@@ -181,29 +187,35 @@ public class Scanning_screen extends AppCompatActivity {
                                         String Soundcode = response.body().getSoundcode();
                                         String Tittle = response.body().getTitle();
 
-                                        Intent i1 = new Intent(Scanning_screen.this, Offer_response_screen.class);
-                                        i1.putExtra("Button1deal", Button1deal);
-                                        i1.putExtra("Button2deal", Button2deal);
-                                        i1.putExtra("Button3deal", Button3deal);
-                                        i1.putExtra("Button4deal", Button4deal);
-                                        i1.putExtra("Button1_img", Button1_img);
-                                        i1.putExtra("Button2_img", Button2_img);
-                                        i1.putExtra("Button3_img", Button3_img);
-                                        i1.putExtra("Button4_img", Button4_img);
-                                        i1.putExtra("Button1_text", Button1_text);
-                                        i1.putExtra("Button2_text", Button2_text);
-                                        i1.putExtra("Button3_text", Button3_text);
-                                        i1.putExtra("Button4_text", Button4_text);
-                                        i1.putExtra("button1_tpl", button1_tpl);
-                                        i1.putExtra("button2_tpl", button2_tpl);
-                                        i1.putExtra("button3_tpl", button3_tpl);
-                                        i1.putExtra("button4_tpl", button4_tpl);
-                                        i1.putExtra("Banner", Banner);
-                                        i1.putExtra("Buttons", Buttons);
-                                        i1.putExtra("Soundcode", Soundcode);
-                                        i1.putExtra("Tittle", Tittle);
-                                        startActivity(i1);
-                                        finish();
+                                        SharedPreferences.Editor editor = getSharedPreferences(Shared_preference_model.MyPREFERENCES, MODE_PRIVATE).edit();
+                                        //editor.putString(Shared_preference_model.Email, Edt_txt_Email.getText().toString());
+
+//
+//
+//                                        Intent i1 = new Intent(Scanning_screen.this, Offer_response_screen.class);
+                                        editor.putString("Button1deal", Button1deal);
+                                        editor.putString("Button2deal", Button2deal);
+                                        editor.putString("Button3deal", Button3deal);
+                                        editor.putString("Button4deal", Button4deal);
+                                        editor.putString("Button1_img", Button1_img);
+                                        editor.putString("Button2_img", Button2_img);
+                                        editor.putString("Button3_img", Button3_img);
+                                        editor.putString("Button4_img", Button4_img);
+                                        editor.putString("Button1_text", Button1_text);
+                                        editor.putString("Button2_text", Button2_text);
+                                        editor.putString("Button3_text", Button3_text);
+                                        editor.putString("Button4_text", Button4_text);
+                                        editor.putString("button1_tpl", button1_tpl);
+                                        editor.putString("button2_tpl", button2_tpl);
+                                        editor.putString("button3_tpl", button3_tpl);
+                                        editor.putString("button4_tpl", button4_tpl);
+                                        editor.putString("Banner", Banner);
+                                        editor.putString("Buttons", Buttons);
+                                        editor.putString("Soundcode", Soundcode);
+                                        editor.putString("Tittle", Tittle);
+                                        editor.apply();
+//                                        startActivity(i1);
+//                                        finish();
                                     } else if (Buttons.contentEquals("2")) {
 
                                         String Button1deal = response.body().getButton1_deal();
@@ -224,25 +236,30 @@ public class Scanning_screen extends AppCompatActivity {
                                         String Soundcode = response.body().getSoundcode();
                                         String Tittle = response.body().getTitle();
 
-                                        Intent i1 = new Intent(Scanning_screen.this, Offer_response_screen.class);
-                                        i1.putExtra("Button1deal", Button1deal);
-                                        i1.putExtra("Button2deal", Button2deal);
+                                        SharedPreferences.Editor editor = getSharedPreferences(Shared_preference_model.MyPREFERENCES, MODE_PRIVATE).edit();
 
-                                        i1.putExtra("Button1_img", Button1_img);
-                                        i1.putExtra("Button2_img", Button2_img);
 
-                                        i1.putExtra("Button1_text", Button1_text);
-                                        i1.putExtra("Button2_text", Button2_text);
-                                        i1.putExtra("button1_tpl", button1_tpl);
-                                        i1.putExtra("button2_tpl", button2_tpl);
-                                        i1.putExtra("Banner", Banner);
-                                        i1.putExtra("Buttons", Buttons);
-                                        i1.putExtra("Soundcode", Soundcode);
-                                        i1.putExtra("Tittle", Tittle);
-                                        startActivity(i1);
-                                        finish();
+                                        editor.putString("Button1deal", Button1deal);
+                                        editor.putString("Button2deal", Button2deal);
+
+                                        editor.putString("Button1_img", Button1_img);
+                                        editor.putString("Button2_img", Button2_img);
+
+                                        editor.putString("Button1_text", Button1_text);
+                                        editor.putString("Button2_text", Button2_text);
+                                        editor.putString("button1_tpl", button1_tpl);
+                                        editor.putString("button2_tpl", button2_tpl);
+                                        editor.putString("Banner", Banner);
+                                        editor.putString("Buttons", Buttons);
+                                        editor.putString("Soundcode", Soundcode);
+                                        editor.putString("Tittle", Tittle);
+                                        editor.apply();
+//
 
                                     }
+                                    Intent i1 = new Intent(Scanning_screen.this, Offer_response_screen.class);
+                                    startActivity(i1);
+                                    finish();
 
 
                                 } else {
@@ -286,4 +303,64 @@ public class Scanning_screen extends AppCompatActivity {
         soundpays.stopAudioScan();
         scanning = false;
     }
+
+
+    private void requestPermissionIfNeeded() {
+        if (android.os.Build.VERSION.SDK_INT >= 23) {
+            if (Scanning_screen.this.checkSelfPermission(Manifest.permission.RECORD_AUDIO)
+                    != PackageManager.PERMISSION_GRANTED) {
+                Scanning_screen.this.requestPermissions(
+                        new String[]{Manifest.permission.RECORD_AUDIO},
+                        SoundpaysConstants.RECORD_AUDIO_REQUEST);
+
+            } else {
+                beginAudioScan();
+            }
+        } else {
+            beginAudioScan();
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case SoundpaysConstants.RECORD_AUDIO_REQUEST: {
+
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    //Toast.makeText(Find_offer_screen.this,"Permission Granted",Toast.LENGTH_LONG).show();
+                    SharedPreferences.Editor editor = getSharedPreferences(Shared_preference_model.MyPREFERENCES, MODE_PRIVATE).edit();
+                    editor.putString("Permission", "Permission Granted");
+
+                    editor.apply();
+
+                    beginAudioScan();
+
+
+                    //beginAudioScan();
+                    // permission was granted, yay! Do the
+                    // contacts-related task you need to do.
+                } else {
+                    SharedPreferences.Editor editor = getSharedPreferences(Shared_preference_model.MyPREFERENCES, MODE_PRIVATE).edit();
+                    editor.putString("Permission", "Permission Denied");
+
+                    editor.apply();
+                    Intent int_login = new Intent(Scanning_screen.this, Home_screen.class);
+                    startActivity(int_login);
+                    finish();
+                    // Toast.makeText(Find_offer_screen.this,"Permission Denied",Toast.LENGTH_LONG).show();
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+
+                }
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+    }
+
 }

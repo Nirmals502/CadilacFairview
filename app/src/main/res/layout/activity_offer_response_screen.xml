@@ -95,18 +95,19 @@
                                 android:layout_below="@+id/imageView_get_couponn"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="14dp"
+                                android:textAllCaps="true"
                                 android:textColor="@color/Blue_dark"
                                 android:textStyle="bold" />
 
                             <ImageView
                                 android:id="@+id/imageView_get_couponn"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
 
 
                                 android:layout_centerHorizontal="true"
 
-                                android:layout_marginTop="15dp" />
+                                android:layout_marginTop="30dp" />
 
                             <TextView
                                 android:id="@+id/textView18"
@@ -116,6 +117,7 @@
                                 android:layout_below="@+id/imageView_get_couponn"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="5dp"
+                                android:textAllCaps="true"
                                 android:textColor="@color/Blue_dark" />
 
                         </RelativeLayout>
@@ -144,11 +146,11 @@
 
                             <ImageView
                                 android:id="@+id/imageView_hold_"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
                                 android:layout_centerHorizontal="true"
 
-                                android:layout_marginTop="15dp" />
+                                android:layout_marginTop="30dp" />
 
                             <TextView
                                 android:id="@+id/textView19"
@@ -157,6 +159,7 @@
                                 android:layout_below="@+id/imageView_hold_"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="5dp"
+                                android:textAllCaps="true"
                                 android:textColor="@color/Blue_dark" />
                         </RelativeLayout>
                     </RelativeLayout>
@@ -194,11 +197,11 @@
 
                             <ImageView
                                 android:id="@+id/imageView5"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
 
                                 android:layout_centerHorizontal="true"
-                                android:layout_marginTop="15dp" />
+                                android:layout_marginTop="30dp" />
 
                             <TextView
                                 android:id="@+id/textView20"
@@ -208,6 +211,7 @@
                                 android:layout_below="@+id/imageView5"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="5dp"
+                                android:textAllCaps="true"
                                 android:textColor="@color/Blue_dark" />
                         </RelativeLayout>
                     </RelativeLayout>
@@ -235,11 +239,11 @@
 
                             <ImageView
                                 android:id="@+id/imageView_take_me"
-                                android:layout_width="70dp"
-                                android:layout_height="70dp"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
 
                                 android:layout_centerHorizontal="true"
-                                android:layout_marginTop="15dp" />
+                                android:layout_marginTop="30dp" />
 
                             <TextView
                                 android:id="@+id/textView21"
@@ -248,6 +252,7 @@
                                 android:layout_below="@+id/imageView_take_me"
                                 android:layout_centerHorizontal="true"
                                 android:layout_marginTop="5dp"
+                                android:textAllCaps="true"
                                 android:textColor="@color/Blue_dark" />
                         </RelativeLayout>
 

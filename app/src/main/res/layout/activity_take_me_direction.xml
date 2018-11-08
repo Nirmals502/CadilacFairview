@@ -76,8 +76,7 @@
                     android:layout_height="match_parent"
 
 
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/map" />
+                    android:scaleType="centerCrop" />
 
             </RelativeLayout>
 
@@ -96,10 +95,9 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginStart="23dp"
+                    android:layout_marginLeft="23dp"
                     android:layout_marginTop="17dp"
-                    android:text="Roots"
                     android:textColor="@color/Blue_dark"
                     android:textSize="22dp"
                     android:textStyle="bold" />
@@ -109,12 +107,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textView_header"
-
-
                     android:layout_marginLeft="20dp"
+
                     android:layout_marginTop="7dp"
                     android:layout_marginRight="5dp"
-                    android:text="Root is located somewhere in the mall,on the upper level.Take any esclator and walk towards the store"
+                    android:gravity="center_horizontal"
                     android:textColor="@color/Blue_dark"
                     android:textSize="18dp" />
 
@@ -127,7 +124,6 @@
                     android:layout_marginTop="10dp"
                     android:layout_marginRight="5dp"
                     android:layout_marginBottom="40dp"
-                    android:text="Contact the store directly at 416-222-3344"
                     android:textColor="@color/Blue_dark" />
 
             </RelativeLayout>

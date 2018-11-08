@@ -3,6 +3,7 @@ package mobile.cadilacfairview;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,12 +40,15 @@ public class Signup_screen extends AppCompatActivity {
     TextView Txt_login;
     animations anim = new animations();
     private ProgressDialog pDialog;
+    String android_id="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_screen);
         ButterKnife.bind(this);
+         android_id = Settings.Secure.getString(this.getContentResolver(),
+                Settings.Secure.ANDROID_ID);
         // mAPIService = ApiUtils.getAPIService();
         Txt_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,7 +83,7 @@ public class Signup_screen extends AppCompatActivity {
                     Post_signup Post = new Post_signup();
                     Post.setAction("register");
                     Post.setCountry("CA");
-                    Post.setDevice("Android");
+                    Post.setDevice(android_id);
                     Post.setEmail(Edt_txt_Email.getText().toString());
                     Post.setProgram("CF");
                     Post.setFirstname(edt_txt_First_name.getText().toString());
@@ -105,6 +109,7 @@ public class Signup_screen extends AppCompatActivity {
 
                                     editor.apply();
                                     Intent int_login = new Intent(Signup_screen.this, Termsnd_condition.class);
+                                    int_login.putExtra("Check_screen","Signup");
                                     startActivity(int_login);
                                     finish();
 

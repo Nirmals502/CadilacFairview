@@ -1,6 +1,7 @@
 package mobile.cadilacfairview;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import DATAMODEL.Shared_preference_model;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -83,146 +85,83 @@ public class Offer_response_screen extends AppCompatActivity {
         setContentView(R.layout.activity_offer_response_screen);
         ButterKnife.bind(this);
 
-        if (savedInstanceState == null) {
-            Bundle extras = getIntent().getExtras();
-            if (extras == null) {
-                Button1deal = "";
-                Button2deal = "";
-                Button3deal = "";
-                Button4deal = "";
-                Button1_img = "";
-                Button2_img = "";
-                Button3_img = "";
-                Button4_img = "";
-                Button1_text = "";
-                Button2_text = "";
-                Button3_text = "";
-                Button4_text = "";
-                button1_tpl = "";
-                button2_tpl = "";
-                button3_tpl = "";
-                button4_tpl = "";
-                Banner = "";
-                Soundcode = "";
-                Tittle = "";
-                Buttons = "";
-                //newString= null;
-            } else {
-                Buttons = extras.getString("Buttons");
-                if (Buttons.contentEquals("4")) {
-                    Lnr_layout2.setVisibility(View.VISIBLE);
-                    Button1deal = extras.getString("Button1deal");
-                    Button2deal = extras.getString("Button2deal");
-                    Button3deal = extras.getString("Button3deal");
-                    Button4deal = extras.getString("Button4deal");
-                    Button1_img = extras.getString("Button1_img");
-                    Button2_img = extras.getString("Button2_img");
-                    Button3_img = extras.getString("Button3_img");
-                    Button4_img = extras.getString("Button4_img");
-                    Button1_text = extras.getString("Button1_text");
-                    Button2_text = extras.getString("Button2_text");
-                    Button3_text = extras.getString("Button3_text");
-                    Button4_text = extras.getString("Button4_text");
-                    button1_tpl = extras.getString("button1_tpl");
-                    button2_tpl = extras.getString("button2_tpl");
-                    button3_tpl = extras.getString("button3_tpl");
-                    button4_tpl = extras.getString("button4_tpl");
-                    Banner = extras.getString("Banner");
-                    Soundcode = extras.getString("Soundcode");
-                    Tittle = extras.getString("Tittle");
+
+        SharedPreferences prefs = getSharedPreferences(Shared_preference_model.MyPREFERENCES, MODE_PRIVATE);
+        Buttons = prefs.getString("Buttons", null);
+        if (Buttons.contentEquals("4")) {
+            Lnr_layout2.setVisibility(View.VISIBLE);
+            Button1deal = prefs.getString("Button1deal", null);
+            Button2deal = prefs.getString("Button2deal", null);
+            Button3deal = prefs.getString("Button3deal", null);
+            Button4deal = prefs.getString("Button4deal", null);
+            Button1_img = prefs.getString("Button1_img", null);
+            Button2_img = prefs.getString("Button2_img", null);
+            Button3_img = prefs.getString("Button3_img", null);
+            Button4_img = prefs.getString("Button4_img", null);
+            Button1_text = prefs.getString("Button1_text", null);
+            Button2_text = prefs.getString("Button2_text", null);
+            Button3_text = prefs.getString("Button3_text", null);
+            Button4_text = prefs.getString("Button4_text", null);
+            button1_tpl = prefs.getString("button1_tpl", null);
+            button2_tpl = prefs.getString("button2_tpl", null);
+            button3_tpl = prefs.getString("button3_tpl", null);
+            button4_tpl = prefs.getString("button4_tpl", null);
+            Banner = prefs.getString("Banner", null);
+            Soundcode = prefs.getString("Soundcode", null);
+            Tittle = prefs.getString("Tittle", null);
 
 
-                    txt_offr.setText(Tittle);
-                    Txt_Get_coupon.setText(Button1_text);
-                    Txt_hold.setText(Button2_text);
-                    Txt_Book_a_fitting_room.setText(Button3_text);
-                    Txt_take_me.setText(Button4_text);
+            txt_offr.setText(Tittle);
+            Txt_Get_coupon.setText(Button1_text);
+            Txt_hold.setText(Button2_text);
+            Txt_Book_a_fitting_room.setText(Button3_text);
+            Txt_take_me.setText(Button4_text);
 
 
-                    Picasso.get().load(Banner).placeholder(R.drawable.progress_bar).into(Img_banner);
-                    Picasso.get().load(Button1_img).placeholder(R.drawable.progress_bar).into(Img_get_coupon);
-                    Picasso.get().load(Button2_img).into(img_hold);
-                    Picasso.get().load(Button3_img).placeholder(R.drawable.progress_bar).into(Book_a_fitting_room);
-                    Picasso.get().load(Button4_img).placeholder(R.drawable.progress_bar).into(Img_take_me);
+            Picasso.get().load(Banner).placeholder(R.drawable.progress_bar).into(Img_banner);
+            Picasso.get().load(Button1_img).placeholder(R.drawable.progress_bar).into(Img_get_coupon);
+            Picasso.get().load(Button2_img).into(img_hold);
+            Picasso.get().load(Button3_img).placeholder(R.drawable.progress_bar).into(Book_a_fitting_room);
+            Picasso.get().load(Button4_img).placeholder(R.drawable.progress_bar).into(Img_take_me);
 
-                    // img_hold;
-
-
-                } else if (Buttons.contentEquals("2")) {
-                    Lnr_layout2.setVisibility(View.INVISIBLE);
-                    Button1deal = extras.getString("Button1deal");
-                    Button2deal = extras.getString("Button2deal");
-
-                    Button1_img = extras.getString("Button1_img");
-                    Button2_img = extras.getString("Button2_img");
-
-                    Button1_text = extras.getString("Button1_text");
-                    Button2_text = extras.getString("Button2_text");
-
-                    button1_tpl = extras.getString("button1_tpl");
-                    button2_tpl = extras.getString("button2_tpl");
-
-                    Banner = extras.getString("Banner");
-                    Soundcode = extras.getString("Soundcode");
-                    Tittle = extras.getString("Tittle");
+            // img_hold;
 
 
-                    txt_offr.setText(Tittle);
-                    Txt_Get_coupon.setText(Button1_text);
-                    Txt_hold.setText(Button2_text);
+        } else if (Buttons.contentEquals("2")) {
+            Lnr_layout2.setVisibility(View.INVISIBLE);
+            Button1deal = prefs.getString("Button1deal", null);
+            Button2deal = prefs.getString("Button2deal", null);
+
+            Button1_img = prefs.getString("Button1_img", null);
+            Button2_img = prefs.getString("Button2_img", null);
+
+            Button1_text = prefs.getString("Button1_text", null);
+            Button2_text = prefs.getString("Button2_text", null);
+
+            button1_tpl = prefs.getString("button1_tpl", null);
+            button2_tpl = prefs.getString("button2_tpl", null);
+
+            Banner = prefs.getString("Banner", null);
+            Soundcode = prefs.getString("Soundcode", null);
+            Tittle = prefs.getString("Tittle", null);
 
 
-                    Picasso.get().load(Banner).into(Img_banner);
-                    Picasso.get().load(Button1_img).into(Img_get_coupon);
-                    Picasso.get().load(Button2_img).into(img_hold);
+            txt_offr.setText(Tittle);
+            Txt_Get_coupon.setText(Button1_text);
+            Txt_hold.setText(Button2_text);
 
 
-                }
+            Picasso.get().load(Banner).into(Img_banner);
+            Picasso.get().load(Button1_img).into(Img_get_coupon);
+            Picasso.get().load(Button2_img).into(img_hold);
 
+        } else if (Buttons.contentEquals("0")) {
 
-                // newString= extras.getString("STRING_I_NEED");
-            }
-        } else {
-            Buttons = (String) savedInstanceState.getSerializable("Buttons");
-            if (Buttons.contentEquals("4")) {
-                Button1deal = (String) savedInstanceState.getSerializable("Button1deal");
-                Button2deal = (String) savedInstanceState.getSerializable("Button2deal");
-                Button3deal = (String) savedInstanceState.getSerializable("Button3deal");
-                Button4deal = (String) savedInstanceState.getSerializable("Button4deal");
-                Button1_img = (String) savedInstanceState.getSerializable("Button1_img");
-                Button2_img = (String) savedInstanceState.getSerializable("Button2_img");
-                Button3_img = (String) savedInstanceState.getSerializable("Button3_img");
-                Button4_img = (String) savedInstanceState.getSerializable("Button4_img");
-                Button1_text = (String) savedInstanceState.getSerializable("Button1_text");
-                Button2_text = (String) savedInstanceState.getSerializable("Button2_text");
-                Button3_text = (String) savedInstanceState.getSerializable("Button3_text");
-                Button4_text = (String) savedInstanceState.getSerializable("Button4_text");
-                button1_tpl = (String) savedInstanceState.getSerializable("button1_tpl");
-                button2_tpl = (String) savedInstanceState.getSerializable("button2_tpl");
-                button3_tpl = (String) savedInstanceState.getSerializable("button3_tpl");
-                button4_tpl = (String) savedInstanceState.getSerializable("button4_tpl");
-                Banner = (String) savedInstanceState.getSerializable("Banner");
-                Soundcode = (String) savedInstanceState.getSerializable("Soundcode");
-                Tittle = (String) savedInstanceState.getSerializable("Tittle");
-            } else if (Buttons.contentEquals("2")) {
-                Button1deal = (String) savedInstanceState.getSerializable("Button1deal");
-                Button2deal = (String) savedInstanceState.getSerializable("Button2deal");
+            Intent int_login = new Intent(Offer_response_screen.this, Get_coupon_action.class);
+            int_login.putExtra("deal", "0");
+            startActivity(int_login);
+            finish();
 
-                Button1_img = (String) savedInstanceState.getSerializable("Button1_img");
-                Button2_img = (String) savedInstanceState.getSerializable("Button2_img");
-
-                Button1_text = (String) savedInstanceState.getSerializable("Button1_text");
-                Button2_text = (String) savedInstanceState.getSerializable("Button2_text");
-
-                button1_tpl = (String) savedInstanceState.getSerializable("button1_tpl");
-                button2_tpl = (String) savedInstanceState.getSerializable("button2_tpl");
-
-                Banner = (String) savedInstanceState.getSerializable("Banner");
-                Soundcode = (String) savedInstanceState.getSerializable("Soundcode");
-                Tittle = (String) savedInstanceState.getSerializable("Tittle");
-            }
-
-            //newString= (String) savedInstanceState.getSerializable("STRING_I_NEED");
         }
 
 
@@ -231,16 +170,20 @@ public class Offer_response_screen extends AppCompatActivity {
             public void onClick(View view) {
                 if (button2_tpl.contentEquals("picker")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Hold_action_screen.class);
+                    int_login.putExtra("deal", Button2deal);
+
                     startActivity(int_login);
-                   // finish();
+                    finish();
                 } else if (button2_tpl.contentEquals("coupon")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Get_coupon_action.class);
+                    int_login.putExtra("deal", Button2deal);
                     startActivity(int_login);
-                    //finish();
+                    finish();
                 } else if (button2_tpl.contentEquals("map")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Take_me_direction.class);
+                    int_login.putExtra("deal", Button2deal);
                     startActivity(int_login);
-                   // finish();
+                    finish();
                 }
             }
         });
@@ -249,16 +192,20 @@ public class Offer_response_screen extends AppCompatActivity {
             public void onClick(View view) {
                 if (button1_tpl.contentEquals("picker")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Hold_action_screen.class);
+                    int_login.putExtra("deal", Button1deal);
                     startActivity(int_login);
-                   // finish();
+                    finish();
                 } else if (button1_tpl.contentEquals("coupon")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Get_coupon_action.class);
+                    int_login.putExtra("deal", Button1deal);
                     startActivity(int_login);
-                    //finish();
+                    finish();
                 } else if (button1_tpl.contentEquals("map")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Take_me_direction.class);
+                    int_login.putExtra("deal", Button1deal);
+
                     startActivity(int_login);
-                   // finish();
+                    finish();
                 }
             }
         });
@@ -267,16 +214,19 @@ public class Offer_response_screen extends AppCompatActivity {
             public void onClick(View view) {
                 if (button3_tpl.contentEquals("picker")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Hold_action_screen.class);
+                    int_login.putExtra("deal", Button3deal);
                     startActivity(int_login);
-                   // finish();
+                    finish();
                 } else if (button3_tpl.contentEquals("coupon")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Get_coupon_action.class);
+                    int_login.putExtra("deal", Button3deal);
                     startActivity(int_login);
-                    //finish();
+                    finish();
                 } else if (button3_tpl.contentEquals("map")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Take_me_direction.class);
+                    int_login.putExtra("deal", Button3deal);
                     startActivity(int_login);
-                    //finish();
+                    finish();
                 }
             }
         });
@@ -286,16 +236,19 @@ public class Offer_response_screen extends AppCompatActivity {
             public void onClick(View view) {
                 if (button4_tpl.contentEquals("picker")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Hold_action_screen.class);
+                    int_login.putExtra("deal", Button4deal);
                     startActivity(int_login);
-                   // finish();
+                    finish();
                 } else if (button4_tpl.contentEquals("coupon")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Get_coupon_action.class);
+                    int_login.putExtra("deal", Button4deal);
                     startActivity(int_login);
-                    //finish();
+                    finish();
                 } else if (button4_tpl.contentEquals("map")) {
                     Intent int_login = new Intent(Offer_response_screen.this, Take_me_direction.class);
+                    int_login.putExtra("deal", Button4deal);
                     startActivity(int_login);
-                   // finish();
+                    finish();
                 }
             }
         });

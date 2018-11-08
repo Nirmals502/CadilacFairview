@@ -88,8 +88,7 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="0dp"
                     android:layout_marginTop="0dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/shoes_place_holder" />
+                    android:scaleType="centerCrop" />
 
             </RelativeLayout>
 
